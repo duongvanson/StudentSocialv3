@@ -1,0 +1,91 @@
+﻿<Page x:Class="StudentSocial.GUI.PHelp"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:StudentSocial.GUI"
+      mc:Ignorable="d"
+      Background="WhiteSmoke"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PHelp">
+    <Page.Resources>
+        <Style TargetType="Label" x:Key="lblTop">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </Page.Resources>
+    <StackPanel Margin="5">
+        <Border BorderThickness="1"
+            CornerRadius="7 7 0 0"
+            Background="#1abc9c"
+                Padding="5"
+            Margin="0 5">
+            <StackPanel>
+                <Label
+                FontSize="16"
+                    FontWeight="DemiBold"
+                    Foreground="White"
+                Content="Cảm ơn bạn đã sử dụng Student Social!"
+                />
+                <TextBlock FontSize="16"
+                           Foreground="White"
+                           Margin="5 0"
+                           TextAlignment="Justify"
+                           TextWrapping="WrapWithOverflow"
+                       Text="Nếu có bất kỳ lỗi phát sinh hoặc ý kiến đóng góp trong quá trình sử dụng Student Social vui lòng liên hệ với chúng mình theo các cách bên dưới nhé."/>
+            </StackPanel>
+        </Border>
+        <Border BorderThickness="1"
+            CornerRadius="7"
+            Background="#fff"
+                Margin="0 5">
+            <StackPanel Orientation="Horizontal"
+                        Margin="5"
+                        Cursor="Hand"
+                        x:Name="spnlMail"
+                        MouseDown="SpnlMail_MouseDown">
+                <Image Source="../Assets/gmail.png"
+                       Width="40" Margin="5 0"/>
+                <Label Content="Email: "
+                       VerticalAlignment="Center"
+                       FontSize="16"/>
+                <Label Content="dev.eagleteam@gmail.com"
+                       FontSize="16"
+                       VerticalAlignment="Center"
+                       Foreground="Blue"/>
+            </StackPanel>
+        </Border>
+        <Border BorderThickness="1"
+            CornerRadius="7"
+            Background="#fff"
+                Margin="0 5">
+            <StackPanel Orientation="Horizontal"
+                        Margin="5"
+                        Cursor="Hand"
+                        x:Name="spnlMess"
+                        MouseDown="SpnlMess_MouseDown">
+                <Image Source="../Assets/messenger.png"
+                       Width="40" Margin="5 0"/>
+                <Label Content="Nhắn tin trên Facebook Messenger"
+                       VerticalAlignment="Center"
+                       FontSize="16"/>
+            </StackPanel>
+        </Border>
+        <Border BorderThickness="1"
+            CornerRadius="7"
+            Background="#fff"
+            Margin="0 5">
+            <StackPanel Orientation="Horizontal"
+                        Margin="5"
+                        Cursor="Hand"
+                        x:Name="spnlPhone">
+                <Image Source="../Assets/phone.png"
+                       Width="40"
+                       Margin="5 0"/>
+                <Label Content="Điện thoại: +84 35 489 1155"
+                       VerticalAlignment="Center"
+                       FontSize="16"/>
+            </StackPanel>
+        </Border>
+    </StackPanel>
+</Page>

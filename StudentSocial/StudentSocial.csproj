@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{40D6D20B-6C83-40C8-AA3A-78CF97D24321}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>StudentSocial</RootNamespace>
+    <AssemblyName>StudentSocial</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ssicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>StudentSocial.App</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AltoHttp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AltoHttp.1.0.3.1\lib\AltoHttp.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="xNet">
+      <HintPath>..\..\studentsocial\packages\xNet.3.3.4\lib\xNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Api.cs" />
+    <Compile Include="Common\Commons.cs" />
+    <Compile Include="Common\ConnectAPI.cs" />
+    <Compile Include="Common\Paths.cs" />
+    <Compile Include="GUI\PAction.xaml.cs">
+      <DependentUpon>PAction.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PHelp.xaml.cs">
+      <DependentUpon>PHelp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PInAndOut.xaml.cs">
+      <DependentUpon>PInAndOut.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PMark.xaml.cs">
+      <DependentUpon>PMark.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PSetting.xaml.cs">
+      <DependentUpon>PSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PTime.xaml.cs">
+      <DependentUpon>PTime.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PUpdate.xaml.cs">
+      <DependentUpon>PUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PUpdateVersion.xaml.cs">
+      <DependentUpon>PUpdateVersion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\WDialog.xaml.cs">
+      <DependentUpon>WDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\WDialogNoti.xaml.cs">
+      <DependentUpon>WDialogNoti.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\WHome.xaml.cs">
+      <DependentUpon>WHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\WLogin.xaml.cs">
+      <DependentUpon>WLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Chung.cs" />
+    <Compile Include="Model\Diem.cs" />
+    <Compile Include="Model\GhiChu.cs" />
+    <Compile Include="Model\Ky.cs" />
+    <Compile Include="Model\Lich.cs" />
+    <Compile Include="Model\Mon.cs" />
+    <Compile Include="Model\Profile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="GUI\PAction.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\PHelp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\PInAndOut.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\PMark.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\PSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\PTime.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\PUpdate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\PUpdateVersion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\WDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\WDialogNoti.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\WHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\WLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\mute.png" />
+    <Resource Include="Assets\open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\logoutapp.png" />
+    <Resource Include="Assets\setting.png" />
+    <Resource Include="Assets\time.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\mini.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\redo.png" />
+    <Resource Include="Assets\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\select.png" />
+    <Resource Include="Assets\selectnow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\helpicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\action.png" />
+    <Resource Include="Assets\schedule.png" />
+    <Resource Include="Assets\score.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\gmail.png" />
+    <Resource Include="Assets\messenger.png" />
+    <Resource Include="Assets\phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ssicon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

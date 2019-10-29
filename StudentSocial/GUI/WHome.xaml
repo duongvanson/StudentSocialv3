@@ -1,0 +1,248 @@
+﻿<Window x:Class="StudentSocial.GUI.WHome"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StudentSocial.GUI"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Background="Transparent"
+        AllowsTransparency="True"
+        Title="Student Social Home" Height="650" Width="850"
+        WindowStartupLocation="CenterScreen" 
+        WindowStyle="None"
+        ResizeMode="NoResize" Icon="/StudentSocial;component/Assets/logo.png">
+    <Window.Resources>
+        <Style TargetType="Label" x:Key="lblMenu">
+            <Setter Property="FontSize" Value="15"/>
+            <!--<Setter Property="Margin" Value="12 0"/>-->
+            <Setter Property="Foreground" Value="Gray"/>
+        </Style>
+        <Style TargetType="Label" x:Key="lblTop">
+            <Setter Property="FontSize" Value="16"/>
+            <!--<Setter Property="Margin" Value="12 0"/>-->
+            <Setter Property="Foreground" Value="Gray"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+        <Style TargetType="ListBoxItem" x:Key="Menu">
+            <Setter Property="Padding" Value="0 14"/>
+            <Setter Property="BorderBrush" Value="#1abc9c"/>
+            <Setter Property="BorderThickness" Value="0 0 0 0"/>
+        </Style>
+        <Style TargetType="Image" x:Key="img">
+            <Setter Property="Width" Value="32"/>
+            <!--<Setter Property="Visibility" Value="Collapsed"/>-->
+        </Style>
+    </Window.Resources>
+    <Border BorderThickness="0.2"
+            CornerRadius="5"
+            Background="LightGray"
+            Padding="2">
+        <DockPanel>
+            <!--MENU TOP-->
+            <Border BorderThickness="0 0 0 1"
+                    BorderBrush="LightGray"
+                    DockPanel.Dock="Top">
+                <DockPanel x:Name="pnlTop"
+                           MouseLeftButtonDown="PnlTop_MouseLeftButtonDown"
+                       Height="70"
+                       Background="White">
+                    <TextBlock 
+                       DockPanel.Dock="Left"
+                       Width="200"
+                       TextAlignment="Center"
+                       VerticalAlignment="Center"
+                       Text="Student Social"
+                       FontSize="23"
+                        Foreground="#1abc9c"
+                        FontWeight="Heavy"/>
+                    <!--MENU ITEM-->
+                    <DockPanel>
+                        <DockPanel DockPanel.Dock="Right">
+                            <StackPanel Orientation="Horizontal"
+                                            DockPanel.Dock="Top"
+                                        HorizontalAlignment="Right">
+                                <Image Source="../Assets/mini.png"
+                                       Width="15"
+                                       Height="20"
+                                       Margin="5 0"
+                                       Cursor="Hand"
+                                       HorizontalAlignment="Right"
+                                       Name="imgMini"
+                                       MouseDown="ImgMini_MouseDown"/>
+                                <Image Source="../Assets/close.png"
+                                       Width="20"
+                                       Height="20"
+                                       Margin="5 0"
+                                       Cursor="Hand"
+                                       HorizontalAlignment="Right"
+                                       Name="imgClose"
+                                       MouseDown="ImgClose_MouseDown"/>
+                            </StackPanel>
+                            <Label Background="Transparent"
+                                    BorderThickness="0"
+                                    BorderBrush="#1abc9c"
+                                    DockPanel.Dock="Bottom"
+                                    Height="30"
+                                    >
+                                <!--<StackPanel Orientation="Horizontal">
+                                    <Image Source="../Assets/logout.png"
+                                       Width="20"
+                                       Height="20"/>
+                                    <Label Content="Đăng xuất"
+                                           Foreground="OrangeRed"/>
+                                </StackPanel>-->
+                            </Label>
+                        </DockPanel>
+                        <StackPanel DockPanel.Dock="Right"
+                                    Orientation="Horizontal"
+                                    Cursor="Hand"
+                                    MouseDown="StackPanel_MouseDown">
+                            <Grid x:Name="avatar">
+                                <Ellipse
+                                     Width="55"
+                                     Height="55"
+                                     Fill="#1abc5c"
+                                    />
+                                <Label
+                                    x:Name="lblLogo"
+                                    Content="X"
+                                    HorizontalAlignment="Center"
+                                     VerticalAlignment="Center"
+                                     FontSize="25"
+                                    Foreground="White"/>
+                            </Grid>
+                            <StackPanel Orientation="Vertical"
+                                        VerticalAlignment="Center">
+                                <Label Content="Họ Và Tên"
+                                       FontSize="16"
+                                       FontWeight="DemiBold"
+                                       x:Name="lblName"
+                                       />
+                                <Label Content="♪ ICTU"
+                                       FontSize="14"
+                                       FontFamily="Arial"
+                                       Foreground="Orange"
+                                       x:Name="lblClass"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Bottom"
+                                    Margin="20 5">
+                            <Label Content="Kiểm tra phiên bản"
+                                   Style="{StaticResource lblTop}"
+                                   x:Name="lblUpdateVersion"
+                                   MouseDown="LblUpdateVersion_MouseDown"/>
+                            <Border Width="1" Margin="3 0" Height="22"
+                                    Visibility="Visible" 
+                                    Background="DarkGray" />
+                            <Label Content="Cập nhật lịch"
+                                   Style="{StaticResource lblTop}"
+                                   x:Name="lblUpdate"
+                                   MouseDown="LblUpdate_MouseDown"/>
+                        </StackPanel>
+                    </DockPanel>
+                </DockPanel>
+            </Border>
+            <DockPanel>
+                <DockPanel DockPanel.Dock="Left"
+                           Width="200"
+                           Background="White">
+                    <ListBox x:Name="lboxMenu"
+                             BorderThickness="0"
+                             Cursor="Hand"
+                             DockPanel.Dock="Top"
+                             SelectionChanged="LboxMenu_SelectionChanged">
+                        <ListBoxItem Tag="time"
+                             Style="{StaticResource Menu}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="../Assets/schedule.png"
+                                       Style="{StaticResource img}"/>
+                                <Label Content="Lịch học"
+                               Style="{StaticResource lblMenu}"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Tag="mark"
+                             Style="{StaticResource Menu}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="../Assets/score.png"
+                                       Style="{StaticResource img}"/>
+                                <Label Content="Điểm học tập"
+                               Style="{StaticResource lblMenu}"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Tag="action"
+                             Style="{StaticResource Menu}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="../Assets/action.png"
+                                       Style="{StaticResource img}"/>
+                                <Label Content="Hoạt động ngoại khóa"
+                               Style="{StaticResource lblMenu}"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Tag="timeout"
+                             Style="{StaticResource Menu}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="../Assets/time.png"
+                                       Style="{StaticResource img}"/>
+                                <Label Content="Thời gian ra vào lớp"
+                               Style="{StaticResource lblMenu}"/>
+                            </StackPanel>
+                            
+                        </ListBoxItem>
+                        <!--<ListBoxItem Tag="support"
+                             Style="{StaticResource Menu}">
+                            <Label Content="Phản ánh - Góp ý"
+                               Style="{StaticResource lblMenu}"/>
+                        </ListBoxItem>-->
+                        <ListBoxItem Tag="setting"
+                             Style="{StaticResource Menu}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="../Assets/setting.png"
+                                       Style="{StaticResource img}"/>
+                                <Label Content="Thiết lập ứng dụng"
+                               Style="{StaticResource lblMenu}"/>
+                            </StackPanel>
+                            
+                        </ListBoxItem>
+                        <ListBoxItem Tag="logout"
+                             Style="{StaticResource Menu}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="../Assets/logoutapp.png"
+                                       Style="{StaticResource img}"/>
+                                <Label Content="Đăng xuất"
+                                   Foreground="Red"
+                               Style="{StaticResource lblMenu}"/>
+                            </StackPanel>
+                            
+                        </ListBoxItem>
+                    </ListBox>
+                    <StackPanel DockPanel.Dock="Bottom"
+                                VerticalAlignment="Bottom"
+                               Orientation="Horizontal"
+                                x:Name="spnlHelp"
+                                MouseDown="SpnlHelp_MouseDown"
+                                Margin="5 0"
+                                Cursor="Help"
+                                >
+                        <Image Source="../Assets/helpicon.png"
+                               Width="30"
+                               Height="auto"
+                               />
+                        <Label 
+                           Content="Bạn cần hỗ trợ?"
+                           Style="{StaticResource lblMenu}"
+                           Padding="0 20"
+                           />
+                    </StackPanel>
+                </DockPanel>
+                <Frame x:Name="viewMain"
+                       JournalOwnership="UsesParentJournal"
+                       Navigating="ViewMain_Navigating">
+
+                </Frame>
+            </DockPanel>
+        </DockPanel>
+    </Border>
+</Window>

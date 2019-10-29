@@ -1,0 +1,88 @@
+﻿<Window x:Class="StudentSocial.GUI.WDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StudentSocial.GUI"
+        mc:Ignorable="d"
+        Background="Transparent"
+        AllowsTransparency="True"
+        Title="WDialog" Height="200" Width="350" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Border BorderThickness="1"
+            BorderBrush="#1abc9c"
+            CornerRadius="7 7 0 0"
+            Background="#1abc9c"
+            Grid.Row="0"
+            VerticalAlignment="Top"
+            Height="200">
+        <StackPanel>
+            <Label Content="Xác nhận đăng xuất"
+                   Background="Transparent"
+                   Height="35"
+                   VerticalAlignment="Top"
+                   HorizontalContentAlignment="Center"
+                   VerticalContentAlignment="Center"
+                   FontSize="16"
+                   FontWeight="DemiBold"
+                   Foreground="White"/>
+            <StackPanel Background="#fff"
+                        Height="165">
+                <TextBlock FontSize="16"
+                        Padding="5"
+                        Margin="0 15"
+                  TextWrapping="WrapWithOverflow"
+                        TextAlignment="Justify"
+                  Text="Bạn hiểu rằng việc đăng xuất sẽ mất dữ liệu hiện tại của bạn trên ứng dụng, bạn muốn tiếp tục chứ?"/>
+                <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                    <Border BorderThickness="1"
+                    BorderBrush="#fff"
+                        Cursor="Hand"
+                    CornerRadius="5"
+                        Width="90"
+                        Height="40"
+                        Margin="5"
+                    Background="#1abc9c">
+                        <Button Content="Xác nhận"
+                            Width="90"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Height="40"
+                            Cursor="Hand"
+                            x:Name="btnXacNhan"
+                            Click="BtnXacNhan_Click"
+                        Padding="5"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        FontSize="16"
+                        Foreground="#fff"/>
+                    </Border>
+                    <Border BorderThickness="1"
+                    BorderBrush="#fff"
+                        Margin="5"
+                        Cursor="Hand"
+                    CornerRadius="5"
+                        Width="90"
+                        Height="40"
+                    Background="Orange">
+                        <Button Content="Hủy"
+                            Width="90"
+                            Height="40"
+                            Cursor="Hand"
+                            x:Name="btnHuy"
+                            IsCancel="True"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                        Padding="5"
+                        Background="Transparent"
+                            BorderBrush="Transparent"
+                        FontSize="16"
+                        BorderThickness="0"
+                        Foreground="#fff"/>
+                    </Border>
+
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</Window>
